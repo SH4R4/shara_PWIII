@@ -1,7 +1,7 @@
 <?php 
 
 $host = 'localhost';
-$dbName = 'banco';
+$dbName = 'veic';
 $user = 'root';
 $pwd = '';
 

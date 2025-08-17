@@ -20,11 +20,11 @@ add DA datetime default current_timestamp on update current_timestamp;
 
 -- teste (o update era manual) --
 
-INSERT INTO auto (ano, cor, modelo, placa, valor) values
-(2004, 'azul', 'fusca', 'BRA7S13', 1545.00 );
+--INSERT INTO auto (ano, cor, modelo, placa, valor) values
+--(2004, 'azul', 'fusca', 'BRA7S13', 1545.00 );
 
-update auto
-set VA = 2000.00
-where id = 1;
+--update auto
+--set VA = 2000.00
+--where id = 1;
 
-select * from auto;
+--select * from auto;
