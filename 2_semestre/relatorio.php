@@ -1,15 +1,15 @@
 <?php
 include 'connection.php';
 
-// Definir porcentagem de correção
+//porcentagem de correção
 $correcao = 0.2;
 
-// Buscar todos os veículos ordenados por valor
+// todos os veículos ordenados por valor
 $stmt = $conn->prepare("SELECT * FROM auto ORDER BY valor ASC");
 $stmt->execute();
 $veiculos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-// Data de emissão
+//Data de emissão
 date_default_timezone_set('America/Sao_Paulo');
 $data_emissao = date('d/m/y H:i');
 ?>
@@ -20,11 +20,12 @@ $data_emissao = date('d/m/y H:i');
 <meta charset="UTF-8">
 <title>Relatório - Carros do Flins</title>
 <style>
-    body { font-family: Arial, sans-serif; background-color: #f0f0f0; padding: 20px; }
-    h2 { text-align: center; }
-    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-    th, td { border: 1px solid #000; padding: 8px; text-align: center; }
-    th { background-color: #ccc; }
+    body { font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; background-color: #2B3145ff; padding: 20px; }
+    h2 { text-align: center; color: #D0D9E6;; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; color: #D0D9E6; }
+    th, td { border: 1px solid #ffffffff; padding: 8px; text-align: center; }
+    th { background-color: hsla(232, 19%, 41%, 1);}
+    p {color: #D0D9E6;}
 </style>
 </head>
 <body>
@@ -53,6 +54,6 @@ $data_emissao = date('d/m/y H:i');
         </tr>
     <?php endforeach; ?>
 </table>
-<button class="btn-voltar" onclick="window.location.href='index.html'">Voltar</button>
+<button class="btn-voltar" onclick="window.location.href='index.php'">Voltar</button>
 </body>
 </html>

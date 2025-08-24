@@ -1,4 +1,7 @@
 <?php
+date_default_timezone_set('America/Sao_Paulo'); // fuso horário
+$data_emissao = date('d/m/Y H:i'); // formato dia/mês/ano hora:minuto
+
 include 'connection.php';
 
 // Atualizar valor se o formulário de alteração foi enviado
@@ -27,7 +30,7 @@ $veiculos = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <title>Consulta de Veículos</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+             font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
             background-color: #2B3145;
             color: #D0D9E6;
             padding: 20px;
@@ -36,7 +39,7 @@ $veiculos = $stmt->fetchAll(PDO::FETCH_ASSOC);
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
-            background-color: hsla(232, 19%, 31%, 1);
+            background-color: rgb(38, 44, 63);;
         }
         th, td {
             padding: 8px;
@@ -54,16 +57,17 @@ $veiculos = $stmt->fetchAll(PDO::FETCH_ASSOC);
             border: none;
             border-radius: 5px;
             cursor: pointer;
-        }
-        .btn-voltar {
             margin-top: 10px;
             padding: 8px 12px;
+            background-color: #A8B6E3ff;
         }
+    
     </style>
 </head>
 <body>
 
 <h2>Consulta de Veículos</h2>
+    <p>DATA DE EMISSÃO: <?= $data_emissao ?></p>
 
 <table>
     <tr>
@@ -98,8 +102,8 @@ $veiculos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 </table>
 
-<button class="btn-voltar" onclick="window.location.href='index.html'">Voltar</button>
-<button class="btn-voltar" onclick="window.location.href='relatorio.php'">Relatorio</button>
+<button onclick="window.location.href='index.php'">Voltar</button>
+<button onclick="window.location.href='relatorio.php'">Relatorio</button>
 
 </body>
 </html>
